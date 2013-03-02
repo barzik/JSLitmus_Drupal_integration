@@ -1,13 +1,10 @@
 /**
- * Looping through all of Drupal.behaviours
-*/
+ * Looping through all of Drupal.behaviours.
+ */
 for (var behavior in Drupal.behaviors) {
 	 runJSLitmusText(behavior);
 }
 
-/**
- * Running the JSLitmus tests.
-*/
 function runJSLitmusText(behavior) {
 	var behavior = 'Drupal.behaviors.' + behavior;
 	JSLitmus.test(behavior, function() {
@@ -16,8 +13,8 @@ function runJSLitmusText(behavior) {
 }
 
 /**
- * Running the namespace behavior without eval
-**/
+ * Running the namespace behavior without eval.
+ */
 function executeFunctionByName(functionName, context) {
   var args = Array.prototype.slice.call(arguments).splice(2);
   var namespaces = functionName.split(".");
