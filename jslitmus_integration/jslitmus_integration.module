@@ -1,0 +1,10 @@
+<?php 
+
+/**
+ * implementation of hook_init
+ **/ 
+function jslitmus_integration_init() {
+	drupal_add_js(drupal_get_path('module', 'jslitmus_integration') .'/js/vendor/JSLitmus.js'); //JSLitmus js addon
+	
+	drupal_add_js(drupal_get_path('module', 'jslitmus_integration') .'/js/jslitmus_integration.js'); // JSLitmus Integration JS file
+}

@@ -1,0 +1,5 @@
+name = JSLitmus integration
+description = Integrate JSLitmus benchmark system with Drupal
+package = JSLitmus
+version = 1.0
+core = 7.x
