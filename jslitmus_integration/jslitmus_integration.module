@@ -12,5 +12,15 @@ function jslitmus_integration_init() {
 	drupal_add_js(drupal_get_path('module', 'jslitmus_integration') . '/js/vendor/JSLitmus.js');
 
   // JSLitmus Integration JS file.
-	drupal_add_js(drupal_get_path('module', 'jslitmus_integration') . '/js/jslitmus_integration.js');
+	drupal_add_js(drupal_get_path('module', 'jslitmus_integration') . '/js/jslitmus_integration.js', array('scope' => 'footer' ,'weight' => '999'));
+}
+
+/**
+ * Implements hook_install().
+ */
+function jslitmus_integration_install() {
+  db_update('system')
+    ->fields(array('weight' => 999))
+    ->condition('name', '[jslitmus_integration]', '=')
+    ->execute();
 }
